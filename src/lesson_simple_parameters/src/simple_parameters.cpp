@@ -13,9 +13,9 @@ int main(int argc, char* argv[])
     // order: <node_namespace>/my_namespace
     // ~ is same as node namespace
     // Create a ROS node handle
-    ros::NodeHandle node("~");
+    // ros::NodeHandle node("~");
     // ros::NodeHandle node("/my_namespace");   // STEP 2: Change 'node;' to 'node("/simple_parameters");'
-    // ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
+    ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
 
     // Set the rate at which we print out our message (1Hz)
     ros::Rate loop_rate(1.0);
