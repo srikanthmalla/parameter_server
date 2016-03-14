@@ -10,12 +10,10 @@ int main(int argc, char* argv[])
     // This must be called before anything else ROS-related 
     ros::init(argc, argv, "simple_parameters");
 
-    // order: <node_namespace>/my_namespace
-    // ~ is same as node namespace
     // Create a ROS node handle
     ros::NodeHandle node("~");
-    // ros::NodeHandle node("/my_namespace");   // STEP 2: Change 'node;' to 'node("/simple_parameters");'
-    // ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
+    //ros::NodeHandle node("/simple_parameters");   // STEP 2: Change 'node;' to 'node("/simple_parameters");'
+    //ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
 
     // Set the rate at which we print out our message (1Hz)
     ros::Rate loop_rate(1.0);
