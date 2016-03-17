@@ -10,12 +10,12 @@ int main(int argc, char* argv[])
     // This must be called before anything else ROS-related 
     ros::init(argc, argv, "simple_parameters");
 
-    // order: <node_namespace>/my_namespace
-    // ~ is same as node namespace
+    // order: my_namespace/
+    // ~ is same as nodename 
     // Create a ROS node handle
-    // ros::NodeHandle node("~");
+    ros::NodeHandle node("~");
     // ros::NodeHandle node("/my_namespace");   // STEP 2: Change 'node;' to 'node("/simple_parameters");'
-    ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
+    // ros::NodeHandle node("~");                    // STEP 3: Change 'node("/simple_parameters")' to 'node("~");'
 
     // Set the rate at which we print out our message (1Hz)
     ros::Rate loop_rate(1.0);
@@ -40,12 +40,12 @@ int main(int argc, char* argv[])
         }
 
         // STEP 4: Uncomment the following 6 lines
-        double x, y;
-        node.param("point/x", x, 0.0);
-        node.param("point/y", y, 0.0);
-        node.setParam("/global_sum", x + y);
-        ROS_INFO_STREAM("  Sum of point values " << x << " & " << y << ": " 
-                << x + y);
+        // double x, y;
+        // node.param("point/x", x, 0.0);
+        // node.param("point/y", y, 0.0);
+        // node.setParam("/global_sum", x + y);
+        // ROS_INFO_STREAM("  Sum of point values " << x << " & " << y << ": " 
+        //         << x + y);
 
 
         // Wait the stated duration
